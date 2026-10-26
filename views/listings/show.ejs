@@ -88,12 +88,13 @@ const listing= <%-JSON.stringify(listing)%>;
         <div class="card col-5 ms-3 mb-3">
         <div class="card-body">
          <h5 class="card-title"><%= review.author.username %></h5>
-         <p class="card-text"><%=review.comment%></p>
-         <p class="card-text"><%=review.rating%> stars</p>
-         <p>  <h3>Rated element name</h3></p>
-  <p class="starability-result" data-rating="3">
+         <p class="starability-result" data-rating="3">
     Rated: 3 stars
   </p>
+         <p class="card-text"><%=review.comment%></p>
+         <!-- <p class="card-text"><%=review.rating%> stars</p> -->
+        
+  
         <form class="mb-3" method="POST" action="/listings/<%=listing._id %>/reviews/<%=review._id %>?_method=DELETE" >
           <button class="btn btn-sm btn-dark">Delete</button>
          </form>
