@@ -22,7 +22,7 @@ const User = require("./models/User.js");
 
 const listingRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
-const userRouter = require("./routes/user.js");
+const userRouter = require("./routes/User.js");
 
 
 const dbUrl=process.env.ATLAS_DB_USER;
