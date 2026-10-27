@@ -1,163 +1,491 @@
-.body {
-  font-family: "Plus Jakarta Sans", sans-serif !important;
-  font-optical-sizing: auto;
-  font-style: normal;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.container {
-  flex: 1;
+
+* {
+    box-sizing: border-box;
 }
 
-.navbar {
-  height: 5rem;
-  background-color: white;
+html {
+    width: 100%;
+    overflow-x: clip;
 }
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.container {
+    flex: 1;
+    min-width: 0;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* ==============================
+   NAVBAR
+================================= */
+
+.navbar {
+    min-height: 5rem;
+    height: auto;
+    background-color: white;
+}
+
 .fa-compass {
-  font-size: 2rem;
-  color: #fe424d;
+    font-size: 2rem;
+    color: #fe424d;
 }
 
 .nav-link {
-  color: #222222 !important;
+    color: #222222 !important;
 }
-/* footer */
+
+/* ==============================
+   FOOTER
+================================= */
+
 .f-info-links a {
-  text-decoration: none;
-  color: #222222;
+    text-decoration: none;
+    color: #222222;
 }
+
 .f-info-links a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .f-info-socials a {
-  color: #222222;
+    color: #222222;
 }
 
 .f-info-links,
 .f-info-socials,
 .f-info-brand {
-  width: 100%;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .f-info-socials i {
-  margin-right: 1rem;
-  font-size: 1.2rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
 }
 
 .f-info a {
-  color: black;
-}
-.f-info {
-  text-align: center;
-  display: flex;
-  height: 8rem;
-  background-color: #ebebeb;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-evenly;
+    color: black;
 }
 
-/* cards */
+.f-info {
+    text-align: center;
+    display: flex;
+    min-height: 8rem;
+    height: auto;
+    padding: 1rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+}
+
+/* ==============================
+   LISTING CARDS
+================================= */
 
 .listing-card {
-  border: none !important;
-  margin-bottom: 2rem;
+    border: none !important;
+    margin-bottom: 2rem;
+    min-width: 0;
 }
 
 .card-img-top {
-  border-radius: 1rem !important;
-  width: 100% !important;
-  object-fit: cover;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    height: 250px;
+    object-fit: cover;
 }
 
 .card-body {
-  padding: 1rem !important;
-  text-align: center;
+    padding: 1rem !important;
+    text-align: center;
+    overflow-wrap: break-word;
 }
+
 .card-text {
-  font-weight: 400 !important;
+    font-weight: 400 !important;
 }
 
-/* card-effect */
 .listing-link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .card-img-overlay {
-  opacity: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
+
 .card-img-overlay:hover {
-  opacity: 0.2;
-  background-color: white;
+    opacity: 0.2;
+    background-color: white;
 }
+
 .add-btn {
-  background-color: #fe424d !important;
-  color: white;
-  border: none;
+    background-color: #fe424d !important;
+    color: white;
+    border: none;
 }
-/* edit-page */
+
 .edit-btn {
-  background-color: #fe424d !important;
-  color: white;
-  border: none;
+    background-color: #fe424d !important;
+    color: white;
+    border: none;
 }
 
-/* show-page */
+/* ==============================
+   LISTING DETAILS PAGE
+================================= */
+
+.show-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
 .show-img {
-  
-    width: 300px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-
-
-.edit-listing-image {
-    width: 250px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
     display: block;
-    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
 }
 
 .btns {
-  display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
 }
-.show-card {
-  padding-left: 0;
-  padding-right: 0;
+
+.btns .btn {
+    width: auto;
+    min-width: 65px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
+
+.btns form {
+    display: inline-flex;
+    margin: 0;
+}
+/* ==============================
+   EDIT LISTING IMAGE
+================================= */
+
+.edit-listing-image {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* ==============================
+   AUTHENTICATION FORMS
+================================= */
 
 .auth-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: sans-serif;
-}
-.form-group {
-  margin-bottom: 15px;
-}
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
-/* map */
-#map{
-  height:400px;
-  width:80vh;
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   MAP
+================================= */
+
+#map {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    min-height: 250px;
+    border-radius: 10px;
+}
+
+/* ==============================
+   TABLETS AND SMALL LAPTOPS
+================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .container {
+        min-width: 0;
+    }
+
+    .show-img {
+        max-width: 100%;
+    }
+
+    #map {
+        height: 350px;
+    }
+}
+
+/* ==============================
+   MOBILE SCREENS
+================================= */
+
+@media (max-width: 767.98px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .listing-card {
+        margin-bottom: 1.25rem;
+    }
+
+    .card-img-top {
+        height: 220px;
+    }
+
+    .f-info {
+        padding: 1rem 0.5rem;
+    }
+
+    .btns {
+        gap: 0.5rem;
+    }
+
+    .auth-container {
+        margin: 25px auto;
+        padding: 16px;
+    }
+
+    #map {
+        height: 300px;
+    }
+}
+
+
+
+
+
+/* Fix stars overflowing review cards */
+.review-card .starability-result {
+    transform: scale(0.8);
+    transform-origin: left center;
+    margin: 10px 0 15px;
+}
+
+/* Keep review cards within their columns */
+.review-card {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.review-card .card-body {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+
+
+/* Default star size */
+.review-card .starability-result {
+    transform: scale(0.7);
+    transform-origin: left center;
+}
+
+/* Make stars smaller on tablets and mobile screens */
+@media (max-width: 768px) {
+    .review-card .starability-result {
+        transform: scale(0.65);
+        transform-origin: left center;
+    }
+}
+
+/* Make stars even smaller on narrow mobile screens */
+@media (max-width: 600px) {
+    .review-card .starability-result {
+        transform: scale(0.55);
+    }
+}
+
+
+/* Fix map width */
+#map {
+    width: 100% !important;
+    max-width: 100%;
+    height: 350px;
+    box-sizing: border-box;
+}
+
+/* Improve spacing on smaller screens */
+@media (max-width: 767.98px) {
+    .review-card .starability-result {
+        transform: scale(0.75);
+    }
+}
+
+
+
+/* Mobile layout */
+@media (max-width: 576px) {
+    .btns {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .btns .btn {
+        padding: 8px 14px;
+    }
+
+    .show-card .card-body {
+        padding: 12px !important;
+    }
+}
+/* ==============================
+   SMALL MOBILE SCREENS
+================================= */
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    .navbar-brand .fa-compass {
+        font-size: 1.6rem;
+    }
+
+    .auth-container {
+        margin: 20px auto;
+        padding: 14px;
+    }
+
+    .btns .btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    .f-info-links,
+    .f-info-socials,
+    .f-info-brand {
+        margin: 6px 0;
+    }
+}
+
+/* ==============================
+   LARGE DESKTOP SCREENS
+================================= */
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .container {
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ==============================
+   ULTRA-WIDE SCREENS
+================================= */
+
+@media (min-width: 1800px) {
+
+    .container {
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body {
+        font-size: 17px;
+    }
+
+    .card-img-top {
+        height: 280px;
+    }
 }
