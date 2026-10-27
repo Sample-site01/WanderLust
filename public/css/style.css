@@ -1,4 +1,8 @@
 
+/* ==============================
+   GLOBAL STYLES
+================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -64,7 +68,8 @@ iframe {
     text-decoration: underline;
 }
 
-.f-info-socials a {
+.f-info-socials a,
+.f-info a {
     color: #222222;
 }
 
@@ -72,7 +77,7 @@ iframe {
 .f-info-socials,
 .f-info-brand {
     width: 100%;
-    margin: 10px;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,10 +87,6 @@ iframe {
 .f-info-socials i {
     margin-right: 1rem;
     font-size: 1.2rem;
-}
-
-.f-info a {
-    color: black;
 }
 
 .f-info {
@@ -108,9 +109,11 @@ iframe {
     border: none !important;
     margin-bottom: 2rem;
     min-width: 0;
+    width: 100%;
 }
 
 .card-img-top {
+    display: block;
     border-radius: 1rem !important;
     width: 100% !important;
     height: 250px;
@@ -120,6 +123,7 @@ iframe {
 .card-body {
     padding: 1rem !important;
     text-align: center;
+    min-width: 0;
     overflow-wrap: break-word;
 }
 
@@ -141,15 +145,10 @@ iframe {
     background-color: white;
 }
 
-.add-btn {
-    background-color: #fe424d !important;
-    color: white;
-    border: none;
-}
-
+.add-btn,
 .edit-btn {
     background-color: #fe424d !important;
-    color: white;
+    color: white !important;
     border: none;
 }
 
@@ -170,6 +169,7 @@ iframe {
     height: auto;
     aspect-ratio: 6 / 5;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .btns {
@@ -182,14 +182,15 @@ iframe {
 .btns .btn {
     width: auto;
     min-width: 65px;
+    padding: 8px 14px;
     white-space: nowrap;
     flex-shrink: 0;
 }
-
 .btns form {
     display: inline-flex;
     margin: 0;
 }
+
 /* ==============================
    EDIT LISTING IMAGE
 ================================= */
@@ -227,12 +228,30 @@ iframe {
     margin-bottom: 5px;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea,
+.form-group select {
     display: block;
     width: 100%;
     max-width: 100%;
     padding: 8px;
-    box-sizing: border-box;
+}
+
+/* ==============================
+   REVIEW CARDS
+   Does not style star ratings.
+================================= */
+
+.review-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.review-card .card-body {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 /* ==============================
@@ -240,10 +259,11 @@ iframe {
 ================================= */
 
 #map {
-    width: 100%;
+    width: 100% !important;
     max-width: 100%;
-    height: 400px;
+    height: 350px;
     min-height: 250px;
+    box-sizing: border-box;
     border-radius: 10px;
 }
 
@@ -258,21 +278,17 @@ iframe {
         padding-bottom: 0.75rem;
     }
 
-    .container {
-        min-width: 0;
-    }
-
     .show-img {
         max-width: 100%;
     }
 
     #map {
-        height: 350px;
+        height: 320px;
     }
 }
 
 /* ==============================
-   MOBILE SCREENS
+   MOBILE DEVICES
 ================================= */
 
 @media (max-width: 767.98px) {
@@ -303,7 +319,7 @@ iframe {
     }
 
     .btns {
-        gap: 0.5rem;
+        gap: 8px;
     }
 
     .auth-container {
@@ -312,91 +328,12 @@ iframe {
     }
 
     #map {
-        height: 300px;
+        height: 280px;
     }
 }
 
-
-
-
-
-/* Fix stars overflowing review cards */
-.review-card .starability-result {
-    transform: scale(0.8);
-    transform-origin: left center;
-    margin: 10px 0 15px;
-}
-
-/* Keep review cards within their columns */
-.review-card {
-    width: 100%;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.review-card .card-body {
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-
-
-/* Default star size */
-.review-card .starability-result {
-    transform: scale(0.7);
-    transform-origin: left center;
-}
-
-/* Make stars smaller on tablets and mobile screens */
-@media (max-width: 768px) {
-    .review-card .starability-result {
-        transform: scale(0.65);
-        transform-origin: left center;
-    }
-}
-
-/* Make stars even smaller on narrow mobile screens */
-@media (max-width: 600px) {
-    .review-card .starability-result {
-        transform: scale(0.55);
-    }
-}
-
-
-/* Fix map width */
-#map {
-    width: 100% !important;
-    max-width: 100%;
-    height: 350px;
-    box-sizing: border-box;
-}
-
-/* Improve spacing on smaller screens */
-@media (max-width: 767.98px) {
-    .review-card .starability-result {
-        transform: scale(0.75);
-    }
-}
-
-
-
-/* Mobile layout */
-@media (max-width: 576px) {
-    .btns {
-        justify-content: flex-start;
-        gap: 10px;
-    }
-
-    .btns .btn {
-        padding: 8px 14px;
-    }
-
-    .show-card .card-body {
-        padding: 12px !important;
-    }
-}
 /* ==============================
-   SMALL MOBILE SCREENS
+   SMALL MOBILE DEVICES
 ================================= */
 
 @media (max-width: 480px) {
@@ -432,8 +369,7 @@ iframe {
     }
 
     .btns .btn {
-        max-width: 100%;
-        white-space: normal;
+        padding: 8px 14px;
     }
 
     #map {
@@ -448,7 +384,7 @@ iframe {
 }
 
 /* ==============================
-   LARGE DESKTOP SCREENS
+   DESKTOP
 ================================= */
 
 @media (min-width: 1200px) {
@@ -459,6 +395,10 @@ iframe {
         margin-right: auto;
     }
 }
+
+/* ==============================
+   LARGE DESKTOP
+================================= */
 
 @media (min-width: 1400px) {
 
